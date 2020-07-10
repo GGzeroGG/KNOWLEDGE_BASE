@@ -1,0 +1,21 @@
+{% extends 'base/common.html' %}
+
+{% block title %}
+    Категории
+{% endblock %}
+
+{% block main %}
+    <ul>
+        {% for category in categories %}
+            {% if category.is_root %}
+                <li>
+                    <a href="{{ category.get_absolute_url }}">
+                        {{ category.name }}
+                    </a>
+                </li>
+            {% endif %}
+        {% empty %}
+            Категорий нет
+        {% endfor %}
+    </ul>
+{% endblock %}

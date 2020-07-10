@@ -1,0 +1,14 @@
+{% extends 'base/common.html' %}
+
+{% block title %}
+    {{ article.name }}
+{% endblock %}
+
+{% block main %}
+    <h1>
+        {{ article.name }}
+    </h1>
+    {% autoescape off %}
+        {{ article.content }}
+    {% endautoescape %}
+{% endblock %}

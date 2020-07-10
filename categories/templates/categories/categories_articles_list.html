@@ -1,0 +1,39 @@
+{% extends 'base/common.html' %}
+
+{% block title %}
+    {{ category.name }}
+{% endblock %}
+
+{% block main %}
+    <div>
+        <h2>
+            Подкатегории
+        </h2>
+        <ul>
+            {% for category in category.get_children %}
+                <li>
+                    <a href="{{ category.get_absolute_url }}">
+                        {{ category.name }}
+                    </a>
+                </li>
+            {% empty %}
+                Категорий нет
+            {% endfor %}
+        </ul>
+    </div>
+
+    <hr>
+
+    <div>
+        <h2>
+            Статьи категории {{ category.name }}
+        </h2>
+        {% for article in category.article.all %}
+            <a href="{{ article.get_absolute_url }}">
+                {{ article.number }}) {{ article.name }}
+            </a><br>
+        {% empty %}
+            Статей нет
+        {% endfor %}
+    </div>
+{% endblock %}
