@@ -1,6 +1,6 @@
 django-treebeard - для создание неограниченой иерархии
     документация
-        2
+        https://django-treebeard.readthedocs.io/en/latest/install.html
 
 django-markitup - редактор текста
     для работы django-markitup
